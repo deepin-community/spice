@@ -1,0 +1,16 @@
+Description: skip unreliable flaky test-listen
+ This test is failing in automated build environment that strip user
+ environments. After a few tries to export $HOME for the test and picking it
+ up we now disable the test "test-listen".
+ Note: in a local sbuild chroot (which passes a user) it runs just fine.
+ Note: We still build the test to catch issues that would happen at that step.
+Forwarded: no
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1814146
+Bug-Debian: https://bugs.debian.org/941006
+Last-Update: 2021-09-30 mjt
+
+--- a/server/tests/meson.build
++++ b/server/tests/meson.build
+@@ -55 +55 @@ tests = [
+-  ['test-listen', true],
++#  ['test-listen', true],

@@ -1,8 +1,36 @@
-spice (0.15.0-2deepin1) unstable; urgency=medium
+spice (0.15.1-1) unstable; urgency=medium
 
-  * Import a patch to fix tests/test-leaks
+  * new upstream release (0.15.1)
+    Closes: LP#1964777
+  * remove patches applied upstream:
+     build-Correctly-check-for-Python-modules.patch
+     test-leaks-fix-the-test-with-OpenSSL3.patch
+  * meson-omit-meson-dist.patch: fix build with meson (it fails right away
+    because build-aux/meson-dist file is not included in the source tarball)
+  * move gstreamer1.0-libav from Recommends: to Suggests: on Ubuntu (MR!5)
+  * d/gbp.conf: create initial gbp config
+  * d/watch:
+     fix url/location
+     include all releases, not just even (02468) ones
+     signature is foo.sig now, not foo.sign
+  * d/upstream/signing-key.asc: key 206D3B352F566F3B0E6572E997D9123DE37A484F
+    Victor Toso de Carvalho <me@victortoso.com>
 
- -- Chang Yang <yangchang@deepin.org>  Mon, 11 Sep 2023 17:00:00 +0800
+ -- Michael Tokarev <mjt@tls.msk.ru>  Mon, 17 Oct 2022 20:33:40 +0300
+
+spice (0.15.0-4) unstable; urgency=medium
+
+  * test-leaks-fix-the-test-with-OpenSSL3.patch:
+    patch from upstream to fix FTBFS with OpenSSL3
+
+ -- Michael Tokarev <mjt@tls.msk.ru>  Sat, 14 May 2022 22:46:12 +0300
+
+spice (0.15.0-3) unstable; urgency=medium
+
+  * patch from upstream to fix ftbfs (Closes: #1005451):
+    build-Correctly-check-for-Python-modules.patch
+
+ -- Michael Tokarev <mjt@tls.msk.ru>  Mon, 14 Mar 2022 11:00:39 +0300
 
 spice (0.15.0-2) unstable; urgency=medium
 

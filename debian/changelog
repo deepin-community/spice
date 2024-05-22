@@ -1,3 +1,9 @@
+spice (0.15.1-1deepin1) unstable; urgency=medium
+
+  * Add loong64 as buildable architecture
+
+ -- Mingcong Bai <baimingcong@uniontech.com>  Wed, 22 May 2024 15:24:51 +0800
+
 spice (0.15.1-1) unstable; urgency=medium
 
   * new upstream release (0.15.1)
